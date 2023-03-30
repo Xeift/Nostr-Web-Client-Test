@@ -10,16 +10,24 @@
     <script type="module">
         import init from './pkg/web_application.js';
         init();
-        const helloBtn = document.getElementById("helloBtn");
         import * as wasm from './pkg/web_application.js';
 
+
+        const helloBtn = document.getElementById("helloBtn");
         helloBtn.addEventListener("click", function() {
             console.log(wasm.greet())}
         );
 
+        const lolBtn = document.getElementById("lolBtn");
+        lolBtn.addEventListener("click", function() {
+            console.log(wasm.lol())}
+        );
     </script>
     
     <button id="helloBtn">
+        你好
+    </button>
+    <button id="lolBtn">
         你好
     </button>
 </body>
