@@ -21,21 +21,17 @@ pub fn greet() -> i32 {
 #[wasm_bindgen]
 pub fn lol() {
     spawn_local(async {
-        const BECH32_SK: &str = "nsec1ufnus6pju578ste3v90xd5m2decpuzpql2295m3sknqcjzyys9ls0qlc85";
+        const BECH32_SK: &str = "nsec1lyc8k4krke9s72zatj8nckx99w6348kd7zc9n7k8dszvg86dp48s3gp8fy";
         let secret_key = SecretKey::from_bech32(BECH32_SK).unwrap();
         let keys = Keys::new(secret_key);
         let client = Client::new(&keys);
     
-        client.add_relay("wss://relay.damus.io").await.unwrap();
-        client.add_relay("wss://relay.rip").await.unwrap();
-    
+        client.add_relay("wss://relay.snort.social").await.unwrap();
         client.connect().await;
     
-        // Publish text note
         let event_id = client
             .publish_text_note("Testing nostr-sdk WASM", &[])
             .await
             .unwrap();
-        // console::log_1(&format!("Event id: {event_id}").into());
     })
 }
