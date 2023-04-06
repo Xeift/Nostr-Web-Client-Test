@@ -19,10 +19,14 @@
 
         const sendMessageBtn = document.getElementById("sendMessageBtn");
         sendMessageBtn.addEventListener("click", function() {
-            console.log(wasm.send_message('nsec1tacg5mhajrp3usad50rne7r4st8j4chsdydjmkjhmeh83erc34hsxxfffc'))}
+            const PRIVATEKEY = document.getElementById('privatekeyInput').value;
+            console.log(PRIVATEKEY);
+            console.log(wasm.send_message(PRIVATEKEY))}
+            // nsec1tacg5mhajrp3usad50rne7r4st8j4chsdydjmkjhmeh83erc34hsxxfffc
         );
     </script>
     
+    <input type="text" id="privatekeyInput" name="privatekey" autocomplete="off">
     <button id="helloBtn">你好(console 35235)</button>
     <button id="sendMessageBtn">傳送訊息</button>
 
