@@ -17,17 +17,14 @@
             console.log(wasm.greet())}
         );
 
-        const lolBtn = document.getElementById("lolBtn");
-        lolBtn.addEventListener("click", function() {
-            console.log(wasm.lol('nsec1tacg5mhajrp3usad50rne7r4st8j4chsdydjmkjhmeh83erc34hsxxfffc'))}
+        const sendMessageBtn = document.getElementById("sendMessageBtn");
+        sendMessageBtn.addEventListener("click", function() {
+            console.log(wasm.send_message('nsec1tacg5mhajrp3usad50rne7r4st8j4chsdydjmkjhmeh83erc34hsxxfffc'))}
         );
     </script>
     
-    <button id="helloBtn">
-        你好(console 35235)
-    </button>
-
-    <button id="lolBtn">傳送訊息</button>
+    <button id="helloBtn">你好(console 35235)</button>
+    <button id="sendMessageBtn">傳送訊息</button>
 
 
       

@@ -1,3 +1,4 @@
+use chrono::Local;
 use nostr_sdk::prelude::*;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen_futures::spawn_local;
@@ -25,18 +26,20 @@ async fn lol2(input: String) {
     let secret_key = SecretKey::from_bech32(bech_32).unwrap();
     let keys = Keys::new(secret_key);
     let client = Client::new(&keys);
-    client.add_relay("wss://relay.snort.social", None).await.unwrap();
+    client.add_relay("wss://relay.snort.social").await.unwrap();
     client.connect().await;
 
+    let current_time = Local::now().to_string();
+    let content = format!("Testing nostr-sdk WASM {}", current_time);
     let _event_id = client
-        .publish_text_note("Testing nostr-sdk WASM", &[])
+        .publish_text_note(content, &[])
         .await
         .unwrap();
 }
 
 
 #[wasm_bindgen]
-pub fn lol(input: &str) {
+pub fn send_message(input: &str) {
     let input = input.clone().to_string();
     spawn_local(lol2(input));
 }
