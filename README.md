@@ -3,6 +3,7 @@
 
 ## 這是做什麼用的？
 這個專案是 Nostr 的網頁版客戶端，使用 Rust WebAssembly 撰寫，仍在非常初期的開發階段。
+
 ![image](https://user-images.githubusercontent.com/80938768/230636194-f94440fb-3769-4e63-8c60-0706e29e6eb7.png)
 
 
@@ -52,8 +53,12 @@ Nostr 主要由中繼器與客戶端組成。
     透過演算法的特性，任何人都可以用公鑰驗證 經私鑰簽名過的內容是否是本人所簽署。
 
 ## Rust 簡介
+Rust 是一種非常安全且高效的高階語言，效能甚至等效 C++。
 
 ## WebAssembly 簡介
+WebAssembly 目前沒有比較好的中文翻譯，雖然組合語言的英文是 Assembly，但 WebAssembly 與 Assembly 並不是相同的東西。
+
+WebAssembly 簡單來說是用 JavaScript 以外的程式語言（大多是C、C++、Rust 等高執行效率的語言）寫邏輯的部分，經過編譯後的函數可以在網頁中與 JavaScript 搭配使用，大幅提升運行效率。
 
 ## 檔案架構
 `src/lib.rs` 是使用 Rust 撰寫的 WebAssembly，這個檔案經過編譯後，結果會存在 `pkg` 資料夾。
