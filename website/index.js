@@ -1,6 +1,6 @@
-import init from './pkg/web_application.js';
+import init from '../pkg/web_application.js';
 init();
-import * as wasm from './pkg/web_application.js';
+import * as wasm from '../pkg/web_application.js';
 
 
 const helloBtn = document.getElementById('helloBtn');
