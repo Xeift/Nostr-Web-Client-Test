@@ -4,8 +4,11 @@ import * as wasm from './pkg/web_application.js';
 
 const helloBtn = document.getElementById('helloBtn');
 helloBtn.addEventListener('click', function() {
-    console.log(wasm.greet())}
-);
+    console.log(wasm.greet())
+    localStorage.setItem('myString', 'asdfg12345');
+    let myString = localStorage.getItem('myString');
+    console.log(myString)
+});
 
 const sendMessageBtn = document.getElementById('sendMessageBtn');
 sendMessageBtn.addEventListener('click', function() {
