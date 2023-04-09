@@ -72,6 +72,8 @@ WebAssembly 簡單來說是用 JavaScript 以外的程式語言（大多是C、C
 
 ✅儲存私鑰至 local storge
 
+## 待完成
+☐讀取訊息
 
 ## 筆記
 wasm-pack build --target web
