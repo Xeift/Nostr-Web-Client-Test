@@ -68,12 +68,12 @@ WebAssembly 簡單來說是用 JavaScript 以外的程式語言（大多是C、C
 `website` 資料夾中存放的則是正常的 html css js，與傳統網站並無差異。
 
 ## 已實作功能
-✅發送訊息
+✅發送自訂訊息
 
 ✅儲存私鑰至 local storge
 
 ## 待完成
-☐讀取訊息
+☐ 讀取訊息
 
 ## 筆記
 wasm-pack build --target web
