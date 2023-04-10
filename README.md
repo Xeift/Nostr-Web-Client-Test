@@ -76,4 +76,6 @@ WebAssembly 簡單來說是用 JavaScript 以外的程式語言（大多是C、C
 ☐ 讀取訊息
 
 ## 筆記
-wasm-pack build --target web
+`wasm-pack build --target web`
+
+編譯 Rust 至 WASM
