@@ -12,9 +12,11 @@ helloBtn.addEventListener('click', function() {
 const sendMessageBtn = document.getElementById('sendMessageBtn');
 sendMessageBtn.addEventListener('click', function() {
     const PRIVATEKEY = localStorage.getItem('NOSTR_PRIVATE_KEY');
+    const MSG_INPUT = document.getElementById('msgInput').value;
     console.log('------------------------');
     console.log(PRIVATEKEY);
-    console.log(wasm.send_message(PRIVATEKEY))
+    console.log(MSG_INPUT);
+    console.log(wasm.send_message(PRIVATEKEY, MSG_INPUT))
     console.log('------------------------\n');
 });
 
