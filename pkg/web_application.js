@@ -234,11 +234,11 @@ export function greet() {
 }
 
 /**
-* @param {string} input
+* @param {string} privatekey
 * @param {string} message
 */
-export function send_message(input, message) {
-    const ptr0 = passStringToWasm0(input, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
+export function send_message(privatekey, message) {
+    const ptr0 = passStringToWasm0(privatekey, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len0 = WASM_VECTOR_LEN;
     const ptr1 = passStringToWasm0(message, wasm.__wbindgen_malloc, wasm.__wbindgen_realloc);
     const len1 = WASM_VECTOR_LEN;

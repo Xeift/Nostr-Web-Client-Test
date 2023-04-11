@@ -20,9 +20,9 @@ pub fn greet() -> i32 {
 }
 
 
-async fn lol2(input: String, message: String) {
+async fn lol2(privatekey: String, message: String) {
     // const bech_32: &str = "nsec1lyc8k4krke9s72zatj8nckx99w6348kd7zc9n7k8dszvg86dp48s3gp8fy";
-    let bech_32: &str = &input[..];
+    let bech_32: &str = &privatekey[..];
     let message_new: &str = &message[..];
     let secret_key = SecretKey::from_bech32(bech_32).unwrap();
     let keys = Keys::new(secret_key);
@@ -40,9 +40,9 @@ async fn lol2(input: String, message: String) {
 
 
 #[wasm_bindgen]
-pub fn send_message(input: &str, message: &str) {
-    let input = input.clone().to_string();
+pub fn send_message(privatekey: &str, message: &str) {
+    let privatekey = privatekey.clone().to_string();
     let message = message.clone().to_string();
 
-    spawn_local(lol2(input, message));
+    spawn_local(lol2(privatekey, message));
 }
