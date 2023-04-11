@@ -9,14 +9,15 @@ helloBtn.addEventListener('click', function() {
 });
 
 
-const sendMessageBtn = document.getElementById('sendMessageBtn');
-sendMessageBtn.addEventListener('click', function() {
+const connectToRelayBtn = document.getElementById('connectToRelayBtn');
+connectToRelayBtn.addEventListener('click', function() {
     const PRIVATEKEY = localStorage.getItem('NOSTR_PRIVATE_KEY');
     const MSG_INPUT = document.getElementById('msgInput').value;
     console.log('------------------------');
     console.log(PRIVATEKEY);
     console.log(MSG_INPUT);
-    console.log(wasm.send_message(PRIVATEKEY, MSG_INPUT))
+    console.log(wasm.connect_to_relay(PRIVATEKEY, MSG_INPUT))
+    console.log('連接成功');
     console.log('------------------------\n');
 });
 

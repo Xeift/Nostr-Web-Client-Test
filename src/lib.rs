@@ -18,8 +18,11 @@ pub fn greet() -> i32 {
     return 35235;
 }
 
-
-async fn send_message_fn(privatekey: String, message: String) {
+#[wasm_bindgen]
+pub async fn connect_to_relay(privatekey: &str, message: &str) {
+    let privatekey = privatekey.clone().to_string();
+    let message = message.clone().to_string();
+    // spawn_local(send_message_fn(privatekey, message));
     let bech_32: &str = &privatekey[..];
     let message_new: &str = &message[..];
     let secret_key = SecretKey::from_bech32(bech_32).unwrap();
@@ -28,45 +31,10 @@ async fn send_message_fn(privatekey: String, message: String) {
     client.add_relay("wss://relay.snort.social").await.unwrap();
     client.connect().await;
 
-    let current_time = Local::now().to_string();
-    let content = format!("Test {} {}",message_new, current_time);
-    let _event_id = client
-        .publish_text_note(content, &[])
-        .await
-        .unwrap();
+    // let current_time = Local::now().to_string();
+    // let content = format!("Test {} {}",message_new, current_time);
+    // let _event_id = client
+    //     .publish_text_note(content, &[])
+    //     .await
+    //     .unwrap();
 }
-
-
-#[wasm_bindgen]
-pub async fn send_message(privatekey: &str, message: &str) {
-    let privatekey = privatekey.clone().to_string();
-    let message = message.clone().to_string();
-    // spawn_local(send_message_fn(privatekey, message));
-    send_message_fn(privatekey, message).await;
-}
-
-
-
-// async fn connect_relay_fn(privatekey: String, message: String) -> Client {
-//     let bech_32: &str = &privatekey[..];
-//     let message_new: &str = &message[..];
-//     let secret_key = SecretKey::from_bech32(bech_32).unwrap();
-//     let keys = Keys::new(secret_key);
-//     let client = Client::new(&keys);
-//     client.add_relay("wss://relay.snort.social").await.unwrap();
-//     client.connect().await;
-//     return client;
-//     // let current_time = Local::now().to_string();
-//     // let content = format!("Test {} {}",message_new, current_time);
-//     // let _event_id = client
-//     //     .publish_text_note(content, &[])
-//     //     .await
-//     //     .unwrap();
-// }
-
-// #[wasm_bindgen]
-// pub fn connect_relay(privatekey: &str, message: &str) {
-//     let privatekey = privatekey.clone().to_string();
-//     let message = message.clone().to_string();
-//     spawn_local(connect_relay_fn(privatekey, message));
-// }
