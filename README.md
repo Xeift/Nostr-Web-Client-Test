@@ -4,7 +4,7 @@
 ## 這是做什麼用的？
 這個專案是 Nostr 的網頁版客戶端，使用 Rust WebAssembly 撰寫，仍在非常初期的開發階段。
 
-![image](https://user-images.githubusercontent.com/80938768/230636194-f94440fb-3769-4e63-8c60-0706e29e6eb7.png)
+![image](https://user-images.githubusercontent.com/80938768/231036444-5ba8e269-065b-4bd2-b2f2-520239e3865e.png)
 
 
 ## Nostr 簡介
