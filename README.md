@@ -73,9 +73,9 @@ WebAssembly 簡單來說是用 JavaScript 以外的程式語言（大多是C、C
 ✅儲存私鑰至 local storge
 
 ## 待完成
-☐ 產生私鑰
+☐ 驗證輸入的私鑰的格式是否正確
 
-☐ 驗證私鑰的格式是否正確
+☐ 產生私鑰
 
 ☐ 若私鑰已存在 local storge，則顯示編輯框
 
