@@ -11,7 +11,6 @@ fn start() {
 }
 
 
-
 #[wasm_bindgen]
 pub fn greet() -> i32 {
     // std::panic::set_hook(Box::new(console_error_panic_hook::hook));
@@ -21,7 +20,6 @@ pub fn greet() -> i32 {
 
 
 async fn lol2(privatekey: String, message: String) {
-    // const bech_32: &str = "nsec1lyc8k4krke9s72zatj8nckx99w6348kd7zc9n7k8dszvg86dp48s3gp8fy";
     let bech_32: &str = &privatekey[..];
     let message_new: &str = &message[..];
     let secret_key = SecretKey::from_bech32(bech_32).unwrap();
