@@ -41,6 +41,5 @@ async fn lol2(privatekey: String, message: String) {
 pub fn send_message(privatekey: &str, message: &str) {
     let privatekey = privatekey.clone().to_string();
     let message = message.clone().to_string();
-
     spawn_local(lol2(privatekey, message));
 }
