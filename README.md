@@ -83,6 +83,8 @@ WebAssembly 簡單來說是用 JavaScript 以外的程式語言（大多是C、C
 
 ☐ 讀取訊息
 
+☐ 過濾訊息 ChatGPT API （？）
+
 ## 筆記
 `wasm-pack build --target web`
 
