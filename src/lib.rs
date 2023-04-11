@@ -19,7 +19,7 @@ pub fn greet() -> i32 {
 }
 
 
-async fn lol2(privatekey: String, message: String) {
+async fn send_message_fn(privatekey: String, message: String) {
     let bech_32: &str = &privatekey[..];
     let message_new: &str = &message[..];
     let secret_key = SecretKey::from_bech32(bech_32).unwrap();
@@ -41,5 +41,5 @@ async fn lol2(privatekey: String, message: String) {
 pub fn send_message(privatekey: &str, message: &str) {
     let privatekey = privatekey.clone().to_string();
     let message = message.clone().to_string();
-    spawn_local(lol2(privatekey, message));
+    spawn_local(send_message_fn(privatekey, message));
 }
